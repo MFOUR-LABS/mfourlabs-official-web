@@ -194,9 +194,9 @@ const App: React.FC = () => {
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-semibold text-brand-white">Community</h4>
               <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">YouTube</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Discord</a>
+              <a href="https://x.com/mfourlabs" target="_blank" rel="noreferrer" className="text-sm text-brand-gray hover:text-brand-white transition-colors">X (Twitter)</a>
+              <a href="https://www.linkedin.com/company/mfourlabs" target="_blank" rel="noreferrer" className="text-sm text-brand-gray hover:text-brand-white transition-colors">LinkedIn</a>
               <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">GitHub</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">X / Twitter</a>
             </div>
 
             <div className="flex flex-col gap-4">
