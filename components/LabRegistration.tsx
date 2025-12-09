@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, QrCode, Terminal, ChevronRight, CheckCircle2, Edit3, Wallet, Shield, UserCircle, Calendar, Building2, ScanLine, ArrowRight, Mail, GraduationCap, BookOpen, Layers, Globe, AlertTriangle, Linkedin } from 'lucide-react';
+import { X, QrCode, Terminal, ChevronRight, CheckCircle2, Edit3, Wallet, Shield, UserCircle, Calendar, Building2, ScanLine, ArrowRight, Mail, GraduationCap, BookOpen, Layers, Globe, AlertTriangle, Linkedin, Copy, Check } from 'lucide-react';
 import { auth, db } from '../services/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { PrivacyPolicy } from './PrivacyPolicy';
@@ -45,6 +45,8 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
    const [registrationSession] = useState(() => new RegistrationSession());
    const [securityErrors, setSecurityErrors] = useState<string[]>([]);
    const [securityWarnings, setSecurityWarnings] = useState<string[]>([]);
+   const [toastMessage, setToastMessage] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+   const [copyButtonState, setCopyButtonState] = useState<'idle' | 'copied'>('idle');
 
    // Ref for scrollable container
    const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -738,21 +740,50 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
 
                         {/* Referral Code */}
                         <div className="w-full max-w-md space-y-3">
-                           <div className="text-xs font-semibold text-white uppercase tracking-wide">Share Your Referral Code</div>
-                           <div className="flex items-center gap-2 p-4 rounded-xl bg-neutral-900 border border-white/10">
-                              <div className="flex-1 font-mono text-sm text-brand-yellow">{referralCode}</div>
-                              <button
-                                 onClick={() => {
-                                    const referralLink = `${window.location.origin}?ref=${referralCode}`;
-                                    navigator.clipboard.writeText(referralLink);
-                                    alert('Referral link copied to clipboard!');
-                                 }}
-                                 className="px-4 py-2 bg-brand-yellow text-black text-xs font-bold rounded-lg hover:bg-white transition-all"
-                              >
-                                 Copy Link
-                              </button>
+                           <div className="text-xs font-semibold text-white uppercase tracking-wide flex items-center gap-2">
+                              <div className="w-1 h-4 bg-brand-yellow rounded-full"></div>
+                              Share Your Referral Code
                            </div>
-                           <div className="text-[10px] text-neutral-500">Share with friends to help them join the lab</div>
+                           <div className="relative">
+                              <div className="flex flex-col sm:flex-row items-stretch gap-2 p-4 rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-950 border border-brand-yellow/30 hover:border-brand-yellow/50 transition-colors duration-300 shadow-lg shadow-brand-yellow/5">
+                                 <div className="flex-1 font-mono text-sm font-semibold text-brand-yellow flex items-center px-2">{referralCode}</div>
+                                 <button
+                                    onClick={() => {
+                                       const referralLink = `${window.location.origin}?ref=${referralCode}`;
+                                       navigator.clipboard.writeText(referralLink).then(() => {
+                                          setCopyButtonState('copied');
+                                          setToastMessage({ message: 'Referral link copied to clipboard!', type: 'success' });
+                                          setTimeout(() => setCopyButtonState('idle'), 2000);
+                                          setTimeout(() => setToastMessage(null), 3000);
+                                       }).catch(() => {
+                                          setToastMessage({ message: 'Failed to copy link', type: 'error' });
+                                          setTimeout(() => setToastMessage(null), 3000);
+                                       });
+                                    }}
+                                    className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-bold text-xs tracking-wide transition-all duration-300 whitespace-nowrap shadow-lg ${
+                                       copyButtonState === 'copied'
+                                          ? 'bg-green-500/20 border border-green-500/50 text-green-400 hover:bg-green-500/30'
+                                          : 'bg-brand-yellow text-black hover:bg-white hover:shadow-lg hover:shadow-brand-yellow/40 active:scale-95'
+                                    }`}
+                                 >
+                                    {copyButtonState === 'copied' ? (
+                                       <>
+                                          <Check className="w-4 h-4" />
+                                          Copied
+                                       </>
+                                    ) : (
+                                       <>
+                                          <Copy className="w-4 h-4" />
+                                          Copy Link
+                                       </>
+                                    )}
+                                 </button>
+                              </div>
+                              <div className="text-[10px] text-neutral-500 mt-2 flex items-center gap-1">
+                                 <div className="w-1 h-1 rounded-full bg-neutral-600"></div>
+                                 Share with friends to help them join the lab
+                              </div>
+                           </div>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
@@ -931,6 +962,11 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
           0% { transform: translateX(-150%) skewX(-12deg); }
           50%, 100% { transform: translateX(150%) skewX(-12deg); }
         }
+
+        @keyframes shrink {
+          0% { width: 100%; }
+          100% { width: 0%; }
+        }
         
         .animate-float {
           animation: float 6s ease-in-out infinite;
@@ -946,6 +982,26 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
           transform: rotateY(0) rotateX(0) translateY(0) scale(1.05);
         }
       `}</style>
+
+         {/* Toast Notification */}
+         {toastMessage && (
+            <div className={`fixed bottom-8 left-8 right-8 md:bottom-auto md:top-8 md:left-auto md:right-8 max-w-md z-[70] animate-fade-in transition-all duration-300 ${
+               toastMessage.type === 'success' 
+                  ? 'bg-green-500/20 border border-green-500/50 text-green-300' 
+                  : 'bg-red-500/20 border border-red-500/50 text-red-300'
+            } p-4 rounded-xl flex items-center gap-3 backdrop-blur-md shadow-lg`}>
+               {toastMessage.type === 'success' ? (
+                  <Check className="w-5 h-5 flex-shrink-0 text-green-400" />
+               ) : (
+                  <AlertTriangle className="w-5 h-5 flex-shrink-0 text-red-400" />
+               )}
+               <span className="text-sm font-medium">{toastMessage.message}</span>
+               <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-green-500 to-brand-yellow animate-pulse rounded-full" style={{
+                  width: '100%',
+                  animation: 'shrink 3s ease-in forwards'
+               }}></div>
+            </div>
+         )}
 
          {/* Privacy Policy Modal */}
          {showPrivacyPolicy && <PrivacyPolicy onClose={() => setShowPrivacyPolicy(false)} />}
