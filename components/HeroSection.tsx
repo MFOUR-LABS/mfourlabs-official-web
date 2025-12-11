@@ -9,6 +9,14 @@ interface HeroProps {
 
 export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
   const [dailyInsight, setDailyInsight] = useState<string>("INITIALIZING PROTOCOLS...");
+  const [heroTitle, setHeroTitle] = useState({
+    line1: "STOP",
+    line2: "PROMPTING",
+    size1: "text-[13vw] md:text-[11vw] lg:text-[11rem]",
+    size2: "text-[13vw] md:text-[11vw] lg:text-[11rem]",
+    key: "initial"
+  });
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     const fetchInsight = async () => {
@@ -34,6 +42,28 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
     fetchInsight();
   }, []);
 
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => {
+      setIsExiting(true);
+    }, 3000);
+
+    const switchTimer = setTimeout(() => {
+      setHeroTitle({
+        line1: "THE WORLD'S FIRST",
+        line2: "VIBE ARCHITECTURE",
+        size1: "text-[6vw] md:text-[5vw] lg:text-[6rem]",
+        size2: "text-[7vw] md:text-[6vw] lg:text-[7rem]",
+        key: "final"
+      });
+      setIsExiting(false);
+    }, 3800);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(switchTimer);
+    };
+  }, []);
+
   return (
     <section id="vision" className="relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 pt-24 md:pt-24 overflow-hidden bg-brand-black">
 
@@ -54,12 +84,14 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
 
         {/* Main Title - Massive & Responsive */}
         <div className="text-center mb-8 md:mb-10 relative">
-          <h1 className="text-[13vw] md:text-[11vw] lg:text-[11rem] font-display font-bold tracking-tighter leading-[0.85] text-brand-white animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>
-            STOP
-          </h1>
-          <h1 className="text-[13vw] md:text-[11vw] lg:text-[11rem] font-display font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-brand-gray/50 to-brand-black/0 animate-slide-up opacity-0" style={{ animationDelay: '0.3s' }}>
-            PROMPTING
-          </h1>
+          <div className={`transition-opacity duration-700 ${isExiting ? 'opacity-0' : 'opacity-100'}`}>
+            <h1 key={`${heroTitle.key}-1`} className={`${heroTitle.size1} font-display font-bold tracking-tighter leading-[0.85] text-brand-white animate-slide-up opacity-0`} style={{ animationDelay: '0.2s' }}>
+              {heroTitle.line1}
+            </h1>
+            <h1 key={`${heroTitle.key}-2`} className={`${heroTitle.size2} font-display font-bold tracking-tighter leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-brand-gray/50 to-brand-black/0 animate-slide-up opacity-0`} style={{ animationDelay: '0.3s' }}>
+              {heroTitle.line2}
+            </h1>
+          </div>
         </div>
 
         {/* Subtitle / Description */}
