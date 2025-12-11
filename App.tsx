@@ -181,32 +181,30 @@ const App: React.FC = () => {
 
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-semibold text-brand-white">Platform</h4>
-              <a href="#" className="text-sm text-brand-gray/50 cursor-not-allowed" title="Coming Soon">mfourlabs.Lab (Coming Soon)</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Documentation</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">System Design</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Changelog</a>
+              <button disabled className="text-sm text-brand-gray/50 cursor-not-allowed text-left" title="Coming Soon">mfourlabs.Lab (Coming Soon)</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Documentation</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">System Design</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Changelog</button>
             </div>
 
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-semibold text-brand-white">Research</h4>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Methodology</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Publications</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Case Studies</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Open Source</a>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Methodology</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Publications</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Case Studies</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Open Source</button>
             </div>
 
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-semibold text-brand-white">Community</h4>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">YouTube</a>
               <a href="https://x.com/mfourlabs" target="_blank" rel="noreferrer" className="text-sm text-brand-gray hover:text-brand-white transition-colors">X (Twitter)</a>
               <a href="https://www.linkedin.com/company/mfourlabs" target="_blank" rel="noreferrer" className="text-sm text-brand-gray hover:text-brand-white transition-colors">LinkedIn</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">GitHub</a>
             </div>
 
             <div className="flex flex-col gap-4">
               <h4 className="text-sm font-semibold text-brand-white">Legal</h4>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Privacy</a>
-              <a href="#" className="text-sm text-brand-gray hover:text-brand-white transition-colors">Terms</a>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Privacy</button>
+              <button onClick={() => window.scrollTo(0, 0)} className="text-sm text-brand-gray hover:text-brand-white transition-colors text-left">Terms</button>
             </div>
           </div>
 
