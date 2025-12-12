@@ -10,7 +10,7 @@ import { analytics, RegistrationSession } from '../services/analyticsService';
 import { securityService } from '../services/securityService';
 
 interface LabRegistrationProps {
-   onClose: () => void;
+   onClose: () => void; i
 }
 
 export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => {
@@ -24,7 +24,7 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
       organization: '',
       privacy: false,
       // New fields for enhanced data collection
-      interestAreas: [] as string[],
+
       experienceLevel: '',
       motivation: '',
       // Security: Honeypot field (hidden from users, should remain empty)
@@ -93,9 +93,6 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
       }
 
       // New field validations
-      if (formData.interestAreas.length === 0) {
-         newErrors.interestAreas = "Please select at least one area of interest";
-      }
 
       if (!formData.experienceLevel) {
          newErrors.experienceLevel = "Experience level is required";
@@ -153,16 +150,7 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
 
          // Handle interest areas (checkbox array)
          if (name === 'interestAreas') {
-            const interestValue = value;
-            setFormData(prev => ({
-               ...prev,
-               interestAreas: checked
-                  ? [...prev.interestAreas, interestValue]
-                  : prev.interestAreas.filter(area => area !== interestValue)
-            }));
-            if (checked) {
-               registrationSession.trackFieldCompletion('interestAreas');
-            }
+            // Removed interestAreas logic
          } else {
             // Handle regular checkboxes (privacy, newsletter)
             setFormData(prev => ({ ...prev, [name]: checked }));
@@ -284,7 +272,6 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
             role: formData.role,
             organization: formData.organization,
             experienceLevel: formData.experienceLevel,
-            interestAreas: formData.interestAreas,
 
          });
          analytics.trackWaitlistPosition(position);
@@ -390,7 +377,7 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
                         {/* Social Proof & Urgency Banner */}
                         <div className="mb-6">
                            <SocialProofBanner
-                              earlyAccessEndDate={new Date(Date.now() + 60 * 24 * 60 * 60 * 1000)}
+                              earlyAccessEndDate={new Date(Date.now() + 60 * 24 * 60 * 60 * 1000)} // 60 days
                            />
                         </div>
 
@@ -612,6 +599,10 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
                                     </div>
                                     {errors.experienceLevel && <div className={errorClass}>{errors.experienceLevel}</div>}
                                  </div>
+
+
+
+
 
 
 
