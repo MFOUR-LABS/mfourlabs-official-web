@@ -10,8 +10,8 @@ interface HeroProps {
 export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
   const [dailyInsight, setDailyInsight] = useState<string>("INITIALIZING PROTOCOLS...");
   const [heroTitle, setHeroTitle] = useState({
-    line1: "The Global Standard",
-    size1: "text-[8vw] md:text-[8vw] lg:text-[8rem]",
+    line1: "The Global Standard For",
+    size1: "text-[6vw] md:text-[5vw] lg:text-[5.5rem]",
     key: "initial"
   });
   const [isExiting, setIsExiting] = useState(false);
@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
 
     const switchTimer = setTimeout(() => {
       setHeroTitle({
-        line1: "For Deterministic AI",
+        line1: "Deterministic AI",
         line2: "Governance",
         size1: "text-[6vw] md:text-[5vw] lg:text-[6rem]",
         size2: "text-[7vw] md:text-[6vw] lg:text-[7rem]",
@@ -102,12 +102,11 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
           <button
             id="request-mvf-cloud-hero"
             onClick={onEnterLab}
-            disabled
-            className="w-full sm:w-auto group relative px-8 py-4 bg-brand-white/30 text-brand-gray rounded-full font-medium tracking-tight overflow-hidden transition-all cursor-not-allowed opacity-50"
-            aria-label="Request MVF Cloud alpha access - Coming soon"
+            className="w-full sm:w-auto group relative px-8 py-4 bg-brand-yellow text-brand-black rounded-full font-medium tracking-tight overflow-hidden transition-all hover:scale-105 active:scale-95"
+            aria-label="Request MVF Cloud alpha access"
           >
             <span className="relative flex items-center justify-center gap-2 transition-colors">
-              Request MVF Cloud (alpha) <ArrowRight className="w-4 h-4" />
+              Request MVF Cloud (alpha) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
 
