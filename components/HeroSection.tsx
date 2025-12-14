@@ -10,8 +10,8 @@ interface HeroProps {
 export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
   const [dailyInsight, setDailyInsight] = useState<string>("INITIALIZING PROTOCOLS...");
   const [heroTitle, setHeroTitle] = useState({
-    line1: "The Global Standard",
-    size1: "text-[8vw] md:text-[8vw] lg:text-[8rem]",
+    line1: "The Global Standard For",
+    size1: "text-[6vw] md:text-[5vw] lg:text-[5.5rem]",
     key: "initial"
   });
   const [isExiting, setIsExiting] = useState(false);
@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
 
     const switchTimer = setTimeout(() => {
       setHeroTitle({
-        line1: "For Deterministic AI",
+        line1: "Deterministic AI",
         line2: "Governance",
         size1: "text-[6vw] md:text-[5vw] lg:text-[6rem]",
         size2: "text-[7vw] md:text-[6vw] lg:text-[7rem]",

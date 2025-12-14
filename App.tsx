@@ -15,7 +15,7 @@ const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) => {
       "Loading Architectural Patterns...",
       "Deconstructing Legacy Modules...",
       "Optimizing Neural Pathways...",
-      "Verifying First Principles...",
+      "Verifying Mirror Protocol...",
       "Establishing Secure Connection...",
       "Welcome to mfourlabs."
     ];

@@ -110,7 +110,7 @@ export const ManifestoSection: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-display font-medium text-brand-white mb-6">The Rallying Cry</h3>
             <div className="space-y-4">
               <p className="text-brand-yellow text-lg md:text-xl font-medium">
-                "Stop Prompting. Start Architecting."
+                "The Global Standard For Deterministic AI Governance"
               </p>
               <p className="text-brand-gray text-base md:text-lg">
                 <span className="text-brand-white font-medium">Secondary Tagline:</span> mfourlabs: Design the Mind.
