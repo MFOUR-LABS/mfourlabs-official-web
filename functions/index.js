@@ -29,7 +29,7 @@ exports.sendWelcomeEmail = onDocumentCreated(
       await resend.emails.send({
         from: FROM_EMAIL,
         to: user.email,
-        subject: 'Welcome to MFOURLABS Early Access',
+        subject: 'Welcome to MVF Cloud (alpha) - Early Access',
         html: `
         <!DOCTYPE html>
         <html lang="en">
@@ -57,7 +57,7 @@ exports.sendWelcomeEmail = onDocumentCreated(
                     <td style="padding: 0 40px 40px;">
                       <p style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.5; color: #1a1a1a;">Hi <strong>${user.name}</strong>,</p>
                       
-                      <p style="margin: 0 0 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.6; color: #4a4a4a;">Thank you for requesting early access to the <strong>MVF CLI Beta</strong>. We're building the future of first principles engineering tools, and we're excited to have you on the waitlist.</p>
+                      <p style="margin: 0 0 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.6; color: #4a4a4a;">Thank you for requesting early access to <strong>MVF Cloud (alpha)</strong>. We're building the future of AI governance and first principles engineering tools, and we're excited to have you on the waitlist.</p>
                       
 
                       
@@ -123,7 +123,7 @@ exports.sendAccessGrantedEmail = onDocumentUpdated(
         await resend.emails.send({
           from: FROM_EMAIL,
           to: after.email,
-          subject: '🚀 You\'re In: MVF CLI Beta Access Granted',
+          subject: '🚀 You\'re In: MVF Cloud (alpha) Access Granted',
           html: `
           <!DOCTYPE html>
           <html lang="en">
@@ -151,16 +151,16 @@ exports.sendAccessGrantedEmail = onDocumentUpdated(
                       <td style="padding: 40px 40px 32px;">
                         <h2 style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 24px; font-weight: 600; color: #1a1a1a;">Congratulations, ${after.name}!</h2>
                         
-                        <p style="margin: 0 0 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.6; color: #4a4a4a;">Your access to the <strong>MVF CLI Beta</strong> has been approved. You're now part of an exclusive group of engineers shaping the future of software architecture.</p>
+                        <p style="margin: 0 0 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 16px; line-height: 1.6; color: #4a4a4a;">Your access to <strong>MVF Cloud (alpha)</strong> has been approved. You're now part of an exclusive group of engineers shaping the future of AI governance and software architecture.</p>
                         
                         <!-- Getting Started Box -->
                         <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 32px 0;">
                           <tr>
                             <td style="padding: 24px; background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid yellow;">
-                              <h3 style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: 600; color: #1a1a1a;">🎯 Getting Started with MVF CLI</h3>
+                              <h3 style="margin: 0 0 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: 600; color: #1a1a1a;">🎯 Getting Started with MVF Cloud</h3>
                               <ol style="margin: 0; padding-left: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif; font-size: 15px; line-height: 1.8; color: #4a4a4a;">
                                 <li style="margin-bottom: 8px;">Visit <a href="https://mfourlabs.dev" style="color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">mfourlabs.dev</a> documentation</li>
-                                <li style="margin-bottom: 8px;">Install the CLI using your access credentials</li>
+                                <li style="margin-bottom: 8px;">Access the platform using your credentials</li>
                                 <li style="margin-bottom: 8px;">Initialize your first project</li>
                                 <li style="margin-bottom: 0;">Follow us on <a href="https://x.com/mfourlabs" style="color: rgb(0, 0, 0); text-decoration: none; font-weight: 600;">X</a> for updates</li>
                               </ol>
