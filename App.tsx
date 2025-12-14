@@ -123,7 +123,7 @@ const App: React.FC = () => {
                 className="group flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-white text-brand-black text-sm font-semibold hover:bg-brand-white/90 transition-all duration-300 transform hover:scale-105"
                 aria-label="Lab Registration"
               >
-                <span>MVF CLI (beta) </span>
+                <span>Request MVF Cloud (alpha)</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </button>
 

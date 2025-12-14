@@ -106,7 +106,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
             className="w-full sm:w-auto group relative px-8 py-4 bg-brand-white text-brand-black rounded-full font-medium tracking-tight overflow-hidden transition-all hover:bg-brand-white/90 hover:scale-[1.02] active:scale-[0.98]"
           >
             <span className="relative flex items-center justify-center gap-2 transition-colors">
-              Early Access for MVF CLI (beta) <ArrowRight className="w-4 h-4" />
+              Request MVF Cloud (alpha) <ArrowRight className="w-4 h-4" />
             </span>
           </button>
 
