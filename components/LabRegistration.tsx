@@ -362,14 +362,29 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
                   {step === 1 ? (
                      <div className="max-w-3xl mx-auto flex flex-col justify-start">
 
-                        {/* Briefing (Compact) */}
-                        <div className="mb-6 flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-neutral-900 to-transparent border border-white/5 shrink-0">
-                           <div className="p-2 bg-brand-yellow/10 rounded-md text-brand-yellow ring-1 ring-brand-yellow/20">
-                              <Shield className="w-4 h-4" />
-                           </div>
-                           <div>
-                              <h4 className="text-xs font-medium text-white tracking-wide">Classified Research Access</h4>
-                              <p className="text-[10px] text-neutral-500 mt-0.5">First Principles Engineering. No Abstractions.</p>
+
+
+                        {/* Enterprise Notice Banner */}
+                        <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-brand-yellow/10 via-brand-yellow/5 to-transparent border border-brand-yellow/30 shrink-0 animate-fade-in">
+                           <div className="flex items-start gap-3">
+                              <div className="p-2 bg-brand-yellow/20 rounded-lg text-brand-yellow ring-1 ring-brand-yellow/30 shrink-0">
+                                 <Building2 className="w-5 h-5" />
+                              </div>
+                              <div className="flex-1">
+                                 <h4 className="text-sm font-bold text-white tracking-wide mb-1.5">Organizations & Enterprises</h4>
+                                 <p className="text-xs text-neutral-300 leading-relaxed mb-2">
+                                    Interested in <span className="text-brand-yellow font-semibold">MVF Cloud (alpha)</span> for your team? Get priority access to our enterprise-grade AI governance platform.
+                                 </p>
+                                 <div className="flex items-center gap-2 p-2.5 rounded-lg bg-black/40 border border-white/10 group hover:border-brand-yellow/50 transition-all">
+                                    <Mail className="w-4 h-4 text-brand-yellow shrink-0" />
+                                    <a
+                                       href="mailto:licensing@mfourlabs.dev"
+                                       className="text-xs font-mono text-brand-yellow hover:text-white transition-colors"
+                                    >
+                                       licensing@mfourlabs.dev
+                                    </a>
+                                 </div>
+                              </div>
                            </div>
                         </div>
 
@@ -726,7 +741,7 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
                                  <div className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-display font-bold text-sm shadow-lg">M4</div>
                                  <div>
                                     <div className="text-[9px] font-bold text-brand-yellow uppercase tracking-widest mb-0.5">Early Access</div>
-                                    <div className="text-xs font-semibold text-white tracking-tight">MVF CLI (beta)</div>
+                                    <div className="text-xs font-semibold text-white tracking-tight">MVF Cloud (alpha)</div>
                                  </div>
                               </div>
 
