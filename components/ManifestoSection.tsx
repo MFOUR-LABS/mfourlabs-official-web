@@ -104,23 +104,7 @@ export const ManifestoSection: React.FC = () => {
 
         </div>
 
-        {/* Rallying Cry Section */}
-        <div className="mt-16 md:mt-20 pt-12 md:pt-16 border-t border-brand-white/5">
-          <div className="max-w-3xl">
-            <h3 className="text-2xl md:text-3xl font-display font-medium text-brand-white mb-6">The Rallying Cry</h3>
-            <div className="space-y-4">
-              <p className="text-brand-yellow text-lg md:text-xl font-medium">
-                "The Global Standard For Deterministic AI Governance"
-              </p>
-              <p className="text-brand-gray text-base md:text-lg">
-                <span className="text-brand-white font-medium">Secondary Tagline:</span> mfourlabs: Design the Mind.
-              </p>
-              <p className="text-brand-gray text-base md:text-lg">
-                <span className="text-brand-white font-medium">The Promise:</span> The Global Standard for Vibe Architecture.
-              </p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
