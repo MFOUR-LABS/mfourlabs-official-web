@@ -178,7 +178,10 @@ export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => 
       setSecurityWarnings([]);
 
       try {
-
+         // Check if Firebase is initialized
+         if (!db) {
+            throw new Error('Firebase is not initialized. Please check your environment variables.');
+         }
 
          // Get user metadata
          const userAgent = navigator.userAgent;
