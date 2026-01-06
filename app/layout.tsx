@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Inter_Tight, JetBrains_Mono } from 'next/font/google';
+import { Inter, Inter_Tight, JetBrains_Mono, Montserrat } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -17,6 +17,13 @@ const interTight = Inter_Tight({
 const jetbrainsMono = JetBrains_Mono({
     subsets: ['latin'],
     variable: '--font-jetbrains-mono',
+    display: 'swap',
+});
+
+const montserrat = Montserrat({
+    subsets: ['latin'],
+    variable: '--font-montserrat',
+    weight: ['400', '500', '600', '700', '800'],
     display: 'swap',
 });
 
@@ -109,7 +116,7 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`scroll-smooth antialiased selection:bg-brand-yellow selection:text-black ${inter.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
+            className={`scroll-smooth antialiased selection:bg-brand-yellow selection:text-black ${inter.variable} ${interTight.variable} ${jetbrainsMono.variable} ${montserrat.variable}`}
             itemScope
             itemType="https://schema.org/WebPage"
         >

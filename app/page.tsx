@@ -106,10 +106,16 @@ export default function Home() {
 
                         {/* Brand */}
                         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
-                            <div className="relative w-10 h-10 flex items-center justify-center">
-                                <img src="/logo.png" alt="M4 Labs Logo" className="w-full h-full object-contain" />
+                            <div className="relative flex items-center gap-1">
+                                {/* M4 */}
+                                <span className="font-montserrat font-bold text-2xl text-brand-white tracking-tight">
+                                    M4
+                                </span>
+                                <span className='font-montserrat font-bold text-6xl text-brand-white tracking-tight'>/</span>
+                                <span className="font-montserrat font-medium text-xl text-brand-white tracking-wider">
+                                    LABS
+                                </span>
                             </div>
-                            <span className={`font-display font-semibold tracking-tight text-lg ${scrolled ? 'opacity-100' : 'opacity-0 md:opacity-100'} transition-opacity`}>MFOUR<span className="text-brand-yellow">LABS</span></span>
                         </div>
 
                         {/* Desktop Links */}

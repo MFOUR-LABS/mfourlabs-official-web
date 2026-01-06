@@ -12,6 +12,7 @@ const config: Config = {
                 sans: ['var(--font-inter)', 'sans-serif'],
                 display: ['var(--font-inter-tight)', 'sans-serif'],
                 mono: ['var(--font-jetbrains-mono)', 'monospace'],
+                montserrat: ['var(--font-montserrat)', 'sans-serif'],
             },
             colors: {
                 brand: {
