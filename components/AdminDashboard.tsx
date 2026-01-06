@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Users, TrendingUp, Clock, CheckCircle, XCircle, Award, Download } from 'lucide-react';
-import { WaitlistService } from '../services/waitlistService';
-import { WaitlistStats, EarlyAccessUser } from '../types/earlyAccess';
+import { WaitlistService } from '@/lib/services/waitlistService';
+import { WaitlistStats, EarlyAccessUser } from '@/lib/types/earlyAccess';
 
 /**
  * Admin Dashboard for Early Access Waitlist Management

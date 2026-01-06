@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Shield, AlertTriangle, Brain, FileCheck, ExternalLink } from 'lucide-react';
 

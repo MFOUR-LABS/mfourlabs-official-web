@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 import { X, Download, Trash2, Shield, CheckCircle2, AlertTriangle, Mail } from 'lucide-react';
-import { gdprService } from '../services/gdprService';
+import { gdprService } from '@/lib/services/gdprService';
 
 interface GDPRDataManagementProps {
     onClose: () => void;

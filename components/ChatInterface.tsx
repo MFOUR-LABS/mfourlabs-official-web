@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Terminal, Cpu, AlertTriangle, X } from 'lucide-react';
-import { ChatMessage } from '../types';
-import { streamGeminiResponse } from '../services/geminiService';
+import { ChatMessage } from '@/lib/types';
+import { streamGeminiResponse } from '@/lib/services/geminiService';
 import { GenerateContentResponse } from '@google/genai';
 
 interface ChatInterfaceProps {

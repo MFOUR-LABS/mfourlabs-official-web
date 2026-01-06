@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { RoadmapItem } from '../types';
+import { RoadmapItem } from '@/lib/types';
 
 const ROADMAP_DATA: RoadmapItem[] = [
   {

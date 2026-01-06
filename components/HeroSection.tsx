@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { GoogleGenAI } from "@google/genai";
@@ -9,7 +11,13 @@ interface HeroProps {
 
 export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
   const [dailyInsight, setDailyInsight] = useState<string>("INITIALIZING PROTOCOLS...");
-  const [heroTitle, setHeroTitle] = useState({
+  const [heroTitle, setHeroTitle] = useState<{
+    line1: string;
+    line2?: string;
+    size1: string;
+    size2?: string;
+    key: string;
+  }>({
     line1: "IronRAG: The Compliance-First",
     size1: "text-[6vw] md:text-[5vw] lg:text-[5.5rem]",
     key: "initial"
@@ -18,12 +26,12 @@ export const HeroSection: React.FC<HeroProps> = ({ onEnterLab }) => {
 
   useEffect(() => {
     const fetchInsight = async () => {
-      if (!process.env.API_KEY) {
+      if (!process.env.NEXT_PUBLIC_API_KEY) {
         setDailyInsight("DESIGN SYSTEMS. NOT JUST CODE.");
         return;
       }
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_API_KEY });
         const model = "gemini-2.5-flash";
         const response = await ai.models.generateContent({
           model,

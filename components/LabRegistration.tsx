@@ -1,15 +1,17 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { X, QrCode, Terminal, ChevronRight, CheckCircle2, Edit3, Wallet, Shield, UserCircle, Calendar, Building2, ScanLine, ArrowRight, Mail, GraduationCap, BookOpen, Layers, Globe, AlertTriangle, Linkedin, Copy, Check } from 'lucide-react';
-import { auth, db } from '../services/firebase';
+import { auth, db } from '@/lib/services/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { PrivacyPolicy } from './PrivacyPolicy';
 import { TermsOfService } from './TermsOfService';
 import { GDPRDataManagement } from './GDPRDataManagement';
-import { analytics, RegistrationSession } from '../services/analyticsService';
-import { securityService } from '../services/securityService';
+import { analytics, RegistrationSession } from '@/lib/services/analyticsService';
+import { securityService } from '@/lib/services/securityService';
 
 interface LabRegistrationProps {
-   onClose: () => void; i
+   onClose: () => void;
 }
 
 export const LabRegistration: React.FC<LabRegistrationProps> = ({ onClose }) => {
