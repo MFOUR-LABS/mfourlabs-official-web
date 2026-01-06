@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp, getApps, FirebaseApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
+import { getFirestore, Firestore } from "firebase/firestore";
 import { getAnalytics, Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -13,15 +13,34 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+// Validate that required Firebase config exists
+const isFirebaseConfigValid = () => {
+  return !!(
+    firebaseConfig.apiKey &&
+    firebaseConfig.authDomain &&
+    firebaseConfig.projectId &&
+    firebaseConfig.appId
+  );
+};
 
-// Initialize Analytics only on client side (browser)
+// Initialize Firebase only if config is valid and no app exists
+let app: FirebaseApp | undefined;
+let auth: Auth | undefined;
+let db: Firestore | undefined;
 let analytics: Analytics | null = null;
-if (typeof window !== 'undefined') {
-  analytics = getAnalytics(app);
+
+if (isFirebaseConfigValid()) {
+  // Initialize Firebase app if not already initialized
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+  auth = getAuth(app);
+  db = getFirestore(app);
+
+  // Initialize Analytics only on client side (browser)
+  if (typeof window !== 'undefined') {
+    analytics = getAnalytics(app);
+  }
+} else {
+  console.warn('Firebase configuration is incomplete. Firebase services will not be initialized.');
 }
 
-export { analytics };
+export { auth, db, analytics };
