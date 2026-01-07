@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter, Inter_Tight, JetBrains_Mono, Montserrat } from 'next/font/google';
 import './globals.css';
+import MaintenancePage from '@/components/MaintenancePage';
+
+const MAINTENANCE_MODE = true;
 
 const inter = Inter({
     subsets: ['latin'],
@@ -289,7 +292,9 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className="font-sans">{children}</body>
+            <body className="font-sans">
+                {MAINTENANCE_MODE ? <MaintenancePage /> : children}
+            </body>
         </html>
     );
 }
