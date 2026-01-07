@@ -178,12 +178,8 @@ export default function AboutPage() {
             </main>
 
             <footer className="w-full border-t border-zinc-800 bg-black py-12 px-6">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between text-[10px] text-zinc-700 tracking-[0.2em] uppercase">
-                    <div>M4 LABS // THE DETERMINISTIC INFRASTRUCTURE UNIT</div>
-                    <div className="mt-4 md:mt-0 flex gap-8">
-                        <span>EST. 2024</span>
-                        <span>SVALBARD DATA VAULT</span>
-                    </div>
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center text-[10px] text-zinc-700 tracking-[0.2em] uppercase">
+                    <div>COPYRIGHT © 2026 MFOUR LABS</div>
                 </div>
             </footer>
         </div>

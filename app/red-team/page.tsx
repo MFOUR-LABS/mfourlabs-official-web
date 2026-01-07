@@ -224,14 +224,8 @@ export default function RedTeamPage() {
             </main>
 
             <footer className="w-full border-t border-zinc-800 bg-black py-8 text-center z-10">
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 tracking-widest uppercase">
-                    <div>
-                        RED TEAM // ADVERSARIAL UNIT
-                    </div>
-                    <div className="flex gap-4 mt-4 md:mt-0">
-                        <span className="hover:text-red-500 transition-colors cursor-pointer">METHODOLOGY</span>
-                        <span className="hover:text-red-500 transition-colors cursor-pointer">ETHICS</span>
-                    </div>
+                <div className="max-w-7xl mx-auto px-6 flex justify-center text-[10px] text-zinc-600 tracking-widest uppercase">
+                    <div>COPYRIGHT © 2026 MFOUR LABS</div>
                 </div>
             </footer>
         </div>

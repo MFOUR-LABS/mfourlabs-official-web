@@ -97,15 +97,8 @@ export default function ResearchLab() {
 
             {/* --- 5. FOOTER (Matches Gateway Style) --- */}
             <footer className="w-full border-t border-zinc-800 bg-black py-8 text-center">
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 tracking-widest uppercase">
-                    <div>
-                        MAINTAINED BY MFOUR LABS // COLOMBO
-                    </div>
-                    <div className="flex gap-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-blue-400 transition-colors">LEGAL</a>
-                        <a href="#" className="hover:text-blue-400 transition-colors">CONTACT</a>
-                        <a href="https://x.com/mfourlabs" className="hover:text-blue-400 transition-colors">TWITTER</a>
-                    </div>
+                <div className="max-w-7xl mx-auto px-6 flex justify-center text-[10px] text-zinc-600 tracking-widest uppercase">
+                    <div>COPYRIGHT © 2026 MFOUR LABS</div>
                 </div>
             </footer>
 

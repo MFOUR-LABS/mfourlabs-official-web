@@ -93,8 +93,8 @@ export default function Gateway() {
 
             {/* FOOTER: Technical Credentials */}
             <footer className="absolute bottom-6 text-center w-full">
-                <p className="text-[10px] text-zinc-700 font-mono">
-                    MAINTAINED BY MFOUR LABS // COLOMBO // DUBAI
+                <p className="text-[10px] text-zinc-700 font-mono tracking-widest uppercase">
+                    COPYRIGHT © 2026 MFOUR LABS
                 </p>
             </footer>
         </main>
