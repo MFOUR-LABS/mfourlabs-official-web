@@ -6,10 +6,9 @@ import { Zap, Brain, Shield, Target, BookOpen, Lightbulb } from 'lucide-react';
 const BentoCard: React.FC<{
   title: string;
   subtitle?: string;
-  icon?: React.ReactNode;
   className?: string;
   children?: React.ReactNode
-}> = ({ title, subtitle, icon, className = '', children }) => (
+}> = ({ title, subtitle, className = '', children }) => (
   <div className={`group relative p-6 md:p-8 bg-brand-surface border border-brand-white/5 rounded-3xl hover:border-brand-white/10 transition-all duration-500 overflow-hidden ${className}`}>
 
     {/* Technical Markers */}
@@ -18,8 +17,7 @@ const BentoCard: React.FC<{
 
     <div className="relative z-10 h-full flex flex-col justify-between">
       <div>
-        {icon && <div className="mb-6 p-3 bg-brand-white/5 w-fit rounded-xl text-brand-white group-hover:text-brand-yellow group-hover:bg-brand-yellow/10 transition-colors duration-300">{icon}</div>}
-        <h3 className="text-xl md:text-2xl font-display font-medium text-brand-white mb-3 tracking-tight">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-mono font-bold text-white mb-3 tracking-tighter group-hover:text-blue-400 transition-colors">{title}</h3>
         {subtitle && <p className="text-sm text-brand-gray leading-relaxed max-w-sm font-light">{subtitle}</p>}
       </div>
       {children}
@@ -39,8 +37,8 @@ export const ManifestoSection: React.FC = () => {
         <header className="mb-16 md:mb-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
           <div>
             <span className="block font-mono text-xs text-brand-yellow uppercase tracking-widest mb-4">2025 Manifesto</span>
-            <h2 id="manifesto-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-brand-white tracking-tighter">
-              Design the <br /> <span className="text-brand-sub">Mind.</span>
+            <h2 id="manifesto-heading" className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-white tracking-tighter">
+              Design the <br /> <span className="text-blue-500">Mind.</span>
             </h2>
           </div>
           <div className="md:text-right">
@@ -58,7 +56,6 @@ export const ManifestoSection: React.FC = () => {
           <BentoCard
             title="The Shift"
             subtitle="Writing code is a commodity. Designing intelligence is a superpower."
-            icon={<Brain className="w-6 h-6" />}
             className="md:col-span-3 lg:col-span-8 bg-gradient-to-br from-brand-surfaceHighlight to-brand-surface min-h-[300px]"
           >
             <div className="mt-8 p-4 bg-brand-black/50 rounded-lg border border-brand-white/5 font-mono text-[10px] md:text-xs text-brand-sub">
@@ -71,7 +68,6 @@ export const ManifestoSection: React.FC = () => {
           <BentoCard
             title="Tame the Chaos"
             subtitle="We reject the Black Box. We force AI into rigorous Interface Contracts using the MVF Standard."
-            icon={<Zap className="w-6 h-6" />}
             className="md:col-span-3 lg:col-span-4 min-h-[250px]"
           />
 
@@ -79,7 +75,6 @@ export const ManifestoSection: React.FC = () => {
           <BentoCard
             title="Prompting is Dead"
             subtitle="Prompt Engineering is guessing. Real Architects design Kernels, Synapses, and Anchors."
-            icon={<Shield className="w-6 h-6" />}
             className="md:col-span-6 lg:col-span-6 min-h-[250px]"
           >
             <div className="mt-auto flex items-center gap-3 pt-6">
@@ -92,7 +87,6 @@ export const ManifestoSection: React.FC = () => {
           <BentoCard
             title="The Destination"
             subtitle="Make MVF the global standard. Eradicate black boxes. Prove top talent lives everywhere."
-            icon={<Target className="w-6 h-6" />}
             className="md:col-span-6 lg:col-span-3 min-h-[250px]"
           />
 
@@ -100,7 +94,6 @@ export const ManifestoSection: React.FC = () => {
           <BentoCard
             title="Core Values"
             subtitle="Architecture > Syntax. No Hallucinations. The Mirror Test. Rigorous Vibe."
-            icon={<Lightbulb className="w-6 h-6" />}
             className="md:col-span-6 lg:col-span-3 bg-brand-yellow/10 border-brand-yellow/20 min-h-[250px]"
           />
 

@@ -4,7 +4,6 @@ import React from 'react';
 import { Shield, AlertTriangle, Brain, FileCheck, ExternalLink } from 'lucide-react';
 
 interface Capability {
-    icon: React.ReactNode;
     title: string;
     description: string;
     regulation: string;
@@ -13,25 +12,21 @@ interface Capability {
 export const SentinelEUSection: React.FC = () => {
     const capabilities: Capability[] = [
         {
-            icon: <AlertTriangle className="w-6 h-6" />,
             title: "Prohibited Practice Detection",
             description: "Instantly flags Real-time Biometrics & Social Scoring systems.",
             regulation: "Article 5"
         },
         {
-            icon: <Shield className="w-6 h-6" />,
             title: "Exception Hunting",
             description: "Distinguishes between 'Banned' and 'Law Enforcement Exceptions' with precision.",
             regulation: "Article 5(1)(d)"
         },
         {
-            icon: <Brain className="w-6 h-6" />,
             title: "Systemic Risk Analysis",
             description: "Classifies GPAI models by Compute Threshold (10²⁵ FLOPs).",
             regulation: "Annex XIII"
         },
         {
-            icon: <FileCheck className="w-6 h-6" />,
             title: "Legacy Protection",
             description: "Handles 'Grandfathering' rules for pre-2023 systems with accuracy.",
             regulation: "Article 111"
@@ -45,7 +40,7 @@ export const SentinelEUSection: React.FC = () => {
                 {/* Section Header */}
                 <header className="mb-16 md:mb-20">
                     <span className="block font-mono text-xs text-brand-yellow uppercase tracking-widest mb-4">Flagship Product</span>
-                    <h2 id="sentinel-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-medium text-brand-white tracking-tighter mb-6">
+                    <h2 id="sentinel-heading" className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-brand-white tracking-tighter mb-6">
                         Case Study: Automated <br className="hidden md:block" />
                         <span className="text-brand-yellow">EU AI Act Compliance</span>
                     </h2>
@@ -62,10 +57,8 @@ export const SentinelEUSection: React.FC = () => {
                             key={index}
                             className="group p-6 bg-brand-surface border border-brand-white/5 rounded-2xl hover:border-brand-yellow/30 transition-all duration-300"
                         >
-                            <div className="mb-4 p-3 bg-brand-yellow/10 w-fit rounded-xl text-brand-yellow group-hover:bg-brand-yellow/20 transition-colors">
-                                {capability.icon}
-                            </div>
-                            <h3 className="text-lg font-display font-medium text-brand-white mb-2">
+
+                            <h3 className="text-lg font-mono font-bold text-brand-white mb-2">
                                 {capability.title}
                             </h3>
                             <p className="text-sm text-brand-gray leading-relaxed mb-3">

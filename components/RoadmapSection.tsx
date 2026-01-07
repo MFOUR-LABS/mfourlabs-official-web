@@ -29,8 +29,8 @@ export const RoadmapSection: React.FC = () => {
     <section id="roadmap" className="py-32 px-6 bg-brand-black border-t border-brand-white/5" aria-labelledby="roadmap-heading">
       <div className="max-w-3xl mx-auto">
         <header className="text-center mb-24">
-          <span className="font-mono text-xs text-brand-sub uppercase tracking-widest">Trajectory</span>
-          <h2 id="roadmap-heading" className="text-4xl font-display font-medium text-brand-white mt-4">Research Trajectory</h2>
+          <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">Trajectory</span>
+          <h2 id="roadmap-heading" className="text-4xl font-mono font-bold text-white mt-4 tracking-tighter">Research Trajectory</h2>
         </header>
 
         <div className="relative pl-8 md:pl-0">
@@ -42,8 +42,8 @@ export const RoadmapSection: React.FC = () => {
               <article key={index} className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 group ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
 
                 {/* Center Marker */}
-                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-brand-black border border-brand-white/20 z-10 group-hover:border-brand-yellow group-hover:scale-125 transition-all duration-300">
-                  {item.active && <div className="absolute inset-0 m-auto w-1.5 h-1.5 rounded-full bg-brand-yellow animate-pulse"></div>}
+                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-black border border-zinc-700 z-10 group-hover:border-brand-yellow group-hover:scale-125 transition-all duration-300">
+                  {item.active && <div className="absolute inset-0 m-auto w-1.5 h-1.5 rounded-full bg-zinc-400 group-hover:bg-brand-yellow animate-pulse transition-colors"></div>}
                 </div>
 
                 {/* Content Spacer for layout balance */}
@@ -52,8 +52,8 @@ export const RoadmapSection: React.FC = () => {
                 {/* Content */}
                 <div className="w-full pl-6 md:pl-0 text-left">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="font-mono text-xs text-brand-yellow">{item.phase}</span>
-                    <h3 className="text-xl font-display font-medium text-brand-white">{item.title}</h3>
+                    <span className="font-mono text-xs text-zinc-500 group-hover:text-brand-yellow transition-colors">{item.phase}</span>
+                    <h3 className="text-xl font-mono font-bold text-white group-hover:text-brand-yellow transition-colors">{item.title}</h3>
                   </div>
                   <p className="text-brand-gray text-sm leading-relaxed max-w-sm">
                     {item.description}
