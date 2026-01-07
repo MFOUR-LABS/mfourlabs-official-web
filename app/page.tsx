@@ -22,7 +22,9 @@ export default function Gateway() {
                     <span className="italic text-zinc-500 text-3xl font-black leading-none pb-1">|</span>
                     <span className="font-montserrat ">LABS</span>
                 </div>
-                <div className="text-xs text-zinc-500">SYSTEM STATUS: OPERATIONAL</div>
+                <Link href="/about" className="text-xs text-zinc-500 hover:text-white transition-colors tracking-widest">
+                    THE MISSION
+                </Link>
             </header>
 
             {/* HERO TEXT: Abstract, not Salesy */}

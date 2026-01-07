@@ -35,6 +35,7 @@ export default function IronGradePage() {
                         </div>
                     </Link>
                     <div className="hidden md:flex items-center gap-6 text-[10px] tracking-widest text-zinc-500">
+                        <Link href="/about" className="hover:text-brand-yellow transition-colors cursor-pointer uppercase">The Mission</Link>
                         <span className="hover:text-brand-yellow transition-colors cursor-pointer">INFRASTRUCTURE</span>
                         <span className="hover:text-brand-yellow transition-colors cursor-pointer">SECURITY</span>
                         <div className="flex items-center gap-2 pl-6 border-l border-zinc-800">
