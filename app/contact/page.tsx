@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ArrowUpRight, ShieldCheck, Server, Lock, Globe } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ShieldCheck, Server, Lock, Globe, Cpu, FileText, Activity } from 'lucide-react';
 import { LabRegistration } from '@/components/LabRegistration';
 import { GlobalPreloader } from '@/components/GlobalPreloader';
 
@@ -57,15 +57,14 @@ export default function IronGradePage() {
                 <div className="relative z-10 px-6 md:px-12">
                     {/* Hero Section */}
                     <div className="max-w-4xl mx-auto text-center mb-24">
-                        <span className="block text-brand-yellow text-xs tracking-[0.2em] mb-6">INFRASTRUCTURE LEVEL 01</span>
+                        <span className="block text-brand-yellow text-xs tracking-[0.2em] mb-6">INFRASTRUCTURE LEVEL: IRON-GRADE</span>
                         <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-8 leading-[0.9]">
-                            HEAVY <br />
-                            <span className="text-zinc-800">INDUSTRY</span> <br />
-                            COMPUTE.
+                            DETERMINISTIC <br />
+                            <span className="text-zinc-800">GOVERNANCE</span> <br />
+                            INFRASTRUCTURE.
                         </h1>
                         <p className="text-zinc-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
-                            Sovereign AI infrastructure for high-risk deployments.
-                            Air-gapped runtimes, recursive oversight, and military-grade encryption.
+                            Sovereign AI security for high-risk deployments. Beyond probabilistic guessing—enforcing deterministic truth through Multi-layer Variable Frameworks (MVF) and real-time hallucination interception.
                         </p>
 
                         <button
@@ -84,19 +83,19 @@ export default function IronGradePage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                         {[
                             {
-                                icon: <Server className="w-6 h-6" />,
-                                title: "Sovereign Runtime",
-                                desc: "Dedicated GPU clusters with physically isolated memory states."
+                                icon: <Cpu className="w-6 h-6" />,
+                                title: "MVF System Config",
+                                desc: "Multi-layer Variable Frameworks that lock AI agents into deterministic logic gates. No prose. No drift. Pure compliance."
                             },
                             {
-                                icon: <Lock className="w-6 h-6" />,
-                                title: "Zero-Trust Mesh",
-                                desc: "Every API call runs through a recursive cryptographic verification loop."
+                                icon: <FileText className="w-6 h-6" />,
+                                title: "Anchor Layer (RAG)",
+                                desc: "Physically isolated context injection. AI only speaks from verified Anchors (Statutes, Laws). If it's not in the Anchor, the system stays silent."
                             },
                             {
-                                icon: <Globe className="w-6 h-6" />,
-                                title: "Global Edge",
-                                desc: "Sub-50ms latency across 32 availability zones worldwide."
+                                icon: <Activity className="w-6 h-6" />,
+                                title: "Mirror Layer Protocol",
+                                desc: "A secondary verification layer that intercepts every output. If the VIS (Visual Integrity Score) drops below 1.0, the request is instantly blocked."
                             }
                         ].map((feature, i) => (
                             <div key={i} className="group p-8 border border-zinc-800 hover:border-brand-yellow/30 bg-black/50 transition-colors">
@@ -113,20 +112,82 @@ export default function IronGradePage() {
                         ))}
                     </div>
 
+                    {/* 3. The Iron Gauntlet */}
+                    <div className="mb-24 border-t border-zinc-800 pt-12">
+                        <h2 className="text-3xl font-bold text-white mb-8 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500">THE IRON GAUNTLET</h2>
+                        <p className="text-zinc-500 text-center max-w-2xl mx-auto mb-12">
+                            Every request to an IronGrade Gateway undergoes a 5-layer cryptographic and semantic gauntlet before delivery.
+                        </p>
+                        <div className="space-y-4 font-mono text-sm max-w-3xl mx-auto">
+                            {[
+                                { step: '01', title: 'IDENTITY LAYER', desc: 'Biometric & Credential Verification' },
+                                { step: '02', title: 'ANCHOR LAYER', desc: 'Verified Truth Retrieval (1000-token chunks)' },
+                                { step: '03', title: 'KERNEL LAYER', desc: 'MVF Kernel Logic Gate Execution' },
+                                { step: '04', title: 'MODEL LAYER', desc: 'Air-Gapped Sovereign Runtime' },
+                                { step: '05', title: 'MIRROR LAYER', desc: 'Semantic Audit & Fail-Safe' }
+                            ].map((layer, i) => (
+                                <div key={i} className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 p-4 border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
+                                    <span className="text-brand-yellow font-bold shrink-0">{layer.step}</span>
+                                    <span className="text-white font-bold shrink-0">{layer.title}</span>
+                                    <span className="hidden md:block w-px h-4 bg-zinc-700 shrink-0"></span>
+                                    <span className="text-zinc-500">{layer.desc}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* 4. Why IronGrade? (Comparison Table) */}
+                    <div className="mb-24 border-t border-zinc-800 pt-12">
+                        <h2 className="text-3xl font-bold text-white mb-12 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500">BRONZE VS. IRON</h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left border-collapse font-mono text-sm">
+                                <thead>
+                                    <tr className="border-b border-zinc-800 text-zinc-500 bg-zinc-900/20">
+                                        <th className="p-4 whitespace-nowrap">FEATURE</th>
+                                        <th className="p-4 whitespace-nowrap">BRONZE GRADE (INDUSTRY)</th>
+                                        <th className="p-4 whitespace-nowrap text-brand-yellow">IRON GRADE (OUR INFRASTRUCTURE)</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="text-zinc-300">
+                                    <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/20">
+                                        <td className="p-4 font-bold text-white">ACCURACY</td>
+                                        <td className="p-4 text-zinc-500">Probabilistic (Best Guess)</td>
+                                        <td className="p-4 text-brand-yellow">Deterministic (Verified Fact)</td>
+                                    </tr>
+                                    <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/20">
+                                        <td className="p-4 font-bold text-white">HALLUCINATIONS</td>
+                                        <td className="p-4 text-zinc-500">Hidden / "Helpful"</td>
+                                        <td className="p-4 text-brand-yellow">Hard-Blocked by Mirror Layer</td>
+                                    </tr>
+                                    <tr className="border-b border-zinc-800/50 hover:bg-zinc-900/20">
+                                        <td className="p-4 font-bold text-white">GOVERNANCE</td>
+                                        <td className="p-4 text-zinc-500">Manual Prompting</td>
+                                        <td className="p-4 text-brand-yellow">MVF Kernel Enforcement</td>
+                                    </tr>
+                                    <tr className="hover:bg-zinc-900/20">
+                                        <td className="p-4 font-bold text-white">SECURITY</td>
+                                        <td className="p-4 text-zinc-500">Public API / Shared Memory</td>
+                                        <td className="p-4 text-brand-yellow">Air-Gapped / Sovereign Runtime</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                     {/* Status Log */}
                     <div className="border-t border-zinc-800 pt-12">
                         <div className="font-mono text-[10px] text-zinc-600 space-y-2">
                             <div className="flex justify-between">
-                                <span>SYSTEM_STATUS</span>
-                                <span className="text-brand-yellow">ALL SYSTEMS NOMINAL</span>
+                                <span>COMPLIANCE_LEVEL</span>
+                                <span className="text-brand-yellow">EU AI ACT // NIST AAL3</span>
                             </div>
                             <div className="flex justify-between">
-                                <span>UPTIME_GUARANTEE</span>
-                                <span>99.999%</span>
+                                <span>DETERMINISTIC_SYNC</span>
+                                <span>ACTIVE [VIS: 1.0]</span>
                             </div>
                             <div className="flex justify-between">
-                                <span>LAST_AUDIT</span>
-                                <span>{new Date().toLocaleDateString()}</span>
+                                <span>HALLUCINATION_BLOCK_RATE</span>
+                                <span>100.00%</span>
                             </div>
                         </div>
                     </div>
