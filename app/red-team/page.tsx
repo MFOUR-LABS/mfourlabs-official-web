@@ -32,8 +32,6 @@ export default function RedTeamPage() {
                     </Link>
                     <div className="hidden md:flex items-center gap-6 text-[10px] tracking-widest text-zinc-500">
                         <Link href="/about" className="hover:text-red-500 transition-colors cursor-pointer uppercase">The Mission</Link>
-                        <span className="hover:text-red-500 transition-colors cursor-pointer">SERVICES</span>
-                        <span className="hover:text-red-500 transition-colors cursor-pointer">ADVERSARIAL</span>
                         <div className="flex items-center gap-2 pl-6 border-l border-zinc-800">
                             <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
                             <span className="text-red-500">ACTIVE</span>

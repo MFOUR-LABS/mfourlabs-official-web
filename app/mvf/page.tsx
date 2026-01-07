@@ -8,7 +8,6 @@ import { CurriculumSection } from '@/components/CurriculumSection';
 import { SentinelEUSection } from '@/components/SentinelEUSection';
 import { AdversarialTestingSection } from '@/components/AdversarialTestingSection';
 import { RoadmapSection } from '@/components/RoadmapSection';
-import { LabRegistration } from '@/components/LabRegistration';
 import { GlobalPreloader } from '@/components/GlobalPreloader';
 import { Menu, X, ExternalLink, Globe, ShieldCheck, Terminal, Cpu, Activity, ArrowUpRight } from 'lucide-react';
 
@@ -86,11 +85,11 @@ export default function ResearchLab() {
                 {/* Content Wrapper */}
                 <div className="relative z-10">
                     <HeroSection />
-                    <div className="border-t border-zinc-800"><ManifestoSection /></div>
+                    <div id="philosophy" className="border-t border-zinc-800"><ManifestoSection /></div>
                     <div className="border-t border-zinc-800"><CurriculumSection /></div>
                     <div className="border-t border-zinc-800"><SentinelEUSection /></div>
                     <div className="border-t border-zinc-800"><AdversarialTestingSection /></div>
-                    <div className="border-t border-zinc-800"><RoadmapSection /></div>
+                    <div id="roadmap" className="border-t border-zinc-800"><RoadmapSection /></div>
                 </div>
 
             </main>
