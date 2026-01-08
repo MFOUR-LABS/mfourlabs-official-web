@@ -61,7 +61,7 @@ export const CurriculumSection: React.FC = () => {
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-12">
             <div className="flex flex-col gap-3">
               <p className="font-mono text-xs text-zinc-500 uppercase tracking-widest">
-                Global Standard: <span className="text-white">MF-CVA-02</span>
+                Architecture Spec: <span className="text-white">MF-CVA-02</span>
               </p>
               <p className="font-mono text-xs text-brand-gray uppercase tracking-widest">
                 Status: <span className="text-brand-white">Stable v1.0</span>
