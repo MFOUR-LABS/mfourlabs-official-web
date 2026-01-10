@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroProps> = () => {
     size2?: string;
     key: string;
   }>({
-    line1: "IronRAG: The Compliance-First",
+    line1: "IronRAG: Compliance-First",
     size1: "text-[6vw] md:text-[5vw] lg:text-[5.5rem]",
     key: "initial"
   });
@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroProps> = () => {
 
     const switchTimer = setTimeout(() => {
       setHeroTitle({
-        line1: "AI Operating System",
+        line1: "The Deterministic AI Governance Architecture",
         size1: "text-[6vw] md:text-[5vw] lg:text-[6rem]",
         key: "final"
       });
